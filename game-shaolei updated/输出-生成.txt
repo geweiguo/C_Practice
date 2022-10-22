@@ -1,0 +1,5 @@
+﻿1>------ 已启动生成: 项目: game2, 配置: Debug Win32 ------
+1>  game.c
+1>d:\00-github\c_practice-main\game-shaolei\game-shaolei\game.c(220): warning C4716: “OpenSurrounding1”: 必须返回一个值
+1>  game-shaolei.vcxproj -> D:\00-Github\C_Practice-main\game-shaolei\Debug\game2.exe
+========== 生成: 成功 1 个，失败 0 个，最新 0 个，跳过 0 个 ==========

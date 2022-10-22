@@ -1,0 +1,17 @@
+﻿生成启动时间为 2022/10/18 21:36:02。
+     1>项目“F:\10-C语言学习\鹏哥C教程\03-数组\game-shaolei\game-shaolei\game-shaolei.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /Gd /TC /errorReport:prompt game.c test.c
+         test.c
+         game.c
+         正在生成代码...
+     1>f:\10-c语言学习\鹏哥c教程\03-数组\game-shaolei\game-shaolei\game.c(168): warning C4716: “OpenSurrounding1”: 必须返回一个值
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"F:\10-C语言学习\鹏哥C教程\03-数组\game-shaolei\x64\Debug\game2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\10-C语言学习\鹏哥C教程\03-数组\game-shaolei\x64\Debug\game2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\10-C语言学习\鹏哥C教程\03-数组\game-shaolei\x64\Debug\game2.lib" /MACHINE:X64 x64\Debug\game.obj
+         x64\Debug\test.obj
+         game-shaolei.vcxproj -> F:\10-C语言学习\鹏哥C教程\03-数组\game-shaolei\x64\Debug\game2.exe
+     1>已完成生成项目“F:\10-C语言学习\鹏哥C教程\03-数组\game-shaolei\game-shaolei\game-shaolei.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:13.01
