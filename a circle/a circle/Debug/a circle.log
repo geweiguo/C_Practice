@@ -1,0 +1,19 @@
+﻿生成启动时间为 2022/10/25 22:33:35。
+     1>项目“F:\10-C语言学习\鹏哥C教程\000-Game\a circle\a circle\a circle.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "a circle.cpp"
+         a circle.cpp
+     1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(137): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(138): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(139): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(140): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(141): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(150): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\10-C语言学习\鹏哥C教程\000-Game\a circle\Debug\a circle.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\10-C语言学习\鹏哥C教程\000-Game\a circle\Debug\a circle.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\10-C语言学习\鹏哥C教程\000-Game\a circle\Debug\a circle.lib" /MACHINE:X86 "Debug\a circle.obj"
+         a circle.vcxproj -> F:\10-C语言学习\鹏哥C教程\000-Game\a circle\Debug\a circle.exe
+     1>已完成生成项目“F:\10-C语言学习\鹏哥C教程\000-Game\a circle\a circle\a circle.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.90

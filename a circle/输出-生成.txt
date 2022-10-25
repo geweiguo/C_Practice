@@ -1,0 +1,10 @@
+﻿1>------ 已启动生成: 项目: a circle, 配置: Debug Win32 ------
+1>  a circle.cpp
+1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(137): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(138): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(139): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(140): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(141): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+1>f:\10-c语言学习\鹏哥c教程\000-game\a circle\a circle\a circle.cpp(150): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+1>  a circle.vcxproj -> F:\10-C语言学习\鹏哥C教程\000-Game\a circle\Debug\a circle.exe
+========== 生成: 成功 1 个，失败 0 个，最新 0 个，跳过 0 个 ==========
