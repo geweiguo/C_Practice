@@ -1,0 +1,119 @@
+C51 COMPILER V9.01   MAIN                                                                  11/02/2022 21:48:53 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\output\main.obj
+COMPILER INVOKED BY: E:\Program Files (x86)\Keil\C51\BIN\C51.EXE ..\source\main.c BROWSE DEBUG OBJECTEXTEND PRINT(..\lis
+                    -ting\main.lst) OBJECT(..\output\main.obj)
+
+line level    source
+
+   1          /*****************************************************************
+   2           *   功能：风动传感器控制                                                                                *
+   3           *          1、开机屏蔽：                                                                                        *
+   4           *             开机10秒内，P2.0输出保持1,10秒后恢复控制；                        *
+   5           *          2、   输入口                      输出口                             *
+   6           *                P1.0                        P2.0                                       *
+   7           *                   有风 0                       0 工作                                 *
+   8           *                   初始状态无风 1                        1 不工作                                  *
+   9           *                   有风 变 无风 0 -> 1                   0 延时一小时变为 1    *
+  10           *                                                                                                                           *
+  11           *              编写人：Greg Ge                                                                              *
+  12           *              版本：  V00                                                                                              *
+  13           *              修订日期：2022年11月1日                                                                  *
+  14           *****************************************************************/
+  15          #include <reg51.h>
+  16          #include "timer.h";
+  17          #include <stdio.h>
+  18          
+  19          sbit OUTPIN_P20 = P2^0;
+  20          sbit INPIN_P10 = P1^0;
+  21          
+  22          #define FLITER_TIMER    100
+  23          #define sec_TIMER               100
+  24          #define Hour_TIMER              100
+  25          
+  26          void main()
+  27          {
+  28   1          Timer0Init();
+  29   1              INPIN_P10 = 1;
+  30   1      
+  31   1              do
+  32   1              {
+  33   2                      OUTPIN_P20 = 1;  
+  34   2                      printf("开机中!\n");
+  35   2              }while(systimerCnt<=10000);
+  36   1              systimerFlag = 0;
+  37   1      
+  38   1              while(1)
+  39   1              {
+  40   2                 if(INPIN_P10 == 0)//有风
+  41   2                 {
+  42   3                              windtoNoFlag = 1;
+  43   3                              windFlag = 1;    //打开有风定时器技术工作标志
+  44   3                              nowindFlag = 0;  //清无风定时标志
+  45   3                              nowindCnt = 0;   //清无风时的技术
+  46   3                              nowindsecCnt = 0;
+  47   3                              if(windCnt >= FLITER_TIMER)     //滤波100ms
+  48   3                              {
+  49   4                                      windFlag = 0;
+  50   4                                      OUTPIN_P20 = 0; 
+  51   4                                      windFlag = 0;
+  52   4                                      printf("有风，电机工作!\n");
+  53   4                              }
+  54   3                      }
+C51 COMPILER V9.01   MAIN                                                                  11/02/2022 21:48:53 PAGE 2   
+
+  55   2                      
+  56   2                      else if((INPIN_P10 == 1)&&(windtoNoFlag == 0))//初始时就是无风
+  57   2                 {
+  58   3                              windFlag = 0;    //关闭有风定时器技术工作标志                   
+  59   3                              windCnt = 0;     
+  60   3                              nowindFlag = 1;  //打开无风定时标志
+  61   3                              if(nowindCnt >= FLITER_TIMER)   //滤波100ms
+  62   3                              {
+  63   4                                      nowindFlag = 0;                         
+  64   4                                      nowindCnt = 0;
+  65   4                                      OUTPIN_P20 = 1; 
+  66   4                              printf("初始时就是无风，电机不工作!\n");
+  67   4                              }          
+  68   3                 }
+  69   2                      else if((INPIN_P10 == 1)&&(windtoNoFlag == 1))//有风到无风
+  70   2                 {
+  71   3                              windFlag = 0;    //关闭有风定时器技术工作标志                   
+  72   3                              windCnt = 0;     
+  73   3                              nowindFlag = 1;  //打开无风定时标志
+  74   3                      
+  75   3                              if(nowindCnt >= sec_TIMER )     //1s
+  76   3                              {
+  77   4                                      nowindCnt = 0;
+  78   4                                      nowindsecCnt++;
+  79   4                                      if(nowindsecCnt >= Hour_TIMER)
+  80   4                                      {       
+  81   5                                              OUTPIN_P20 = 1; 
+  82   5                                              nowindsecCnt = 0;
+  83   5                                              nowindFlag = 0;
+  84   5                                              windtoNoFlag = 0;
+  85   5                                        
+  86   5                                              printf("有风到无风，电机延时关闭!\n");
+  87   5                                      }
+  88   4      
+  89   4                              }          
+  90   3                 }
+  91   2      
+  92   2              }
+  93   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    199    ----
+   CONSTANT SIZE    =     82    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+"..\output\main.obj",
+"..\output\timer.obj" 
+TO "..\output\Test20221102" 
+PRINT("..\listing\Test20221102.m51")
